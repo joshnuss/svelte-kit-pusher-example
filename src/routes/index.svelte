@@ -66,7 +66,6 @@
   }
   a {
     color: #444;
-    text-decoration: none;
   }
   label span {
     color: #555;
