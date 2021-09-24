@@ -14,7 +14,7 @@ export async function post({query}) {
       name: '1234'
     }
   }
-  pusher.trigger('private-incoming-calls', type, data)
+  await pusher.trigger('private-incoming-calls', type, data)
 
   return {
     body: { message: 'sent' }
