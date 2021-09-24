@@ -1,5 +1,6 @@
 <script>
   import {fly} from 'svelte/transition'
+  import {elasticInOut} from 'svelte/easing'
   import incomingCall from '$lib/incomingCall.js'
 
   async function send(type) {
@@ -21,13 +22,11 @@
 <h1>Pusher test</h1>
 
 <pre>
-  {JSON.stringify($incomingCall, null, 2)}
+  {JSON.stringify({call: $incomingCall}, null, 2)}
 </pre>
 
-
-
 {#if $incomingCall}
-  <div class="toast" transition:fly={{y: 100}}>
+  <div class="toast" transition:fly={{y: 100, easing: elasticInOut, duration: 600}}>
     <h2>Incoming call</h2>
     <nav>
       <a href="https://myshopifystore.shopify.com/admin/customers/{$incomingCall.customer.id}">{$incomingCall.customer.name}</a>
@@ -36,8 +35,6 @@
     </nav>
   </div>
 {/if}
-
-
 
 <button on:click={start}>
   Start call
