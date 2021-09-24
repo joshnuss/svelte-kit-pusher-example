@@ -1,11 +1,4 @@
-import Pusher from 'pusher'
-
-const pusher = new Pusher({
-  appId: process.env['VITE_PUSHER_APP_ID'],
-  key: process.env['VITE_PUSHER_KEY'],
-  secret: process.env['VITE_PUSHER_SECRET'],
-  cluster: process.env['VITE_PUSHER_CLUSTER']
-})
+import { pusher } from '$lib/pusher.js'
 
 export async function post({query}) {
   const type = query.get('type')
@@ -21,7 +14,7 @@ export async function post({query}) {
       name: '1234'
     }
   }
-  pusher.trigger('incoming-calls', type, data)
+  pusher.trigger('private-incoming-calls', type, data)
 
   return {
     body: { message: 'sent' }

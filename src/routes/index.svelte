@@ -30,9 +30,9 @@
   <div class="toast" transition:fly={{y: 100}}>
     <h2>Incoming call</h2>
     <nav>
-      <a href="https://myshopifystore.shopify.com/customers/{$incomingCall.customer.id}">{$incomingCall.customer.name}</a>
-      <a href="https://myshopifystore.shopify.com/customers/{$incomingCall.customer.id}">{$incomingCall.customer.phone}</a>
-      <a href="https://myshopifystore.shopify.com/orders/{$incomingCall.order.id}">#{$incomingCall.order.name}</a>
+      <a href="https://myshopifystore.shopify.com/admin/customers/{$incomingCall.customer.id}">{$incomingCall.customer.name}</a>
+      <a href="https://myshopifystore.shopify.com/admin/customers/{$incomingCall.customer.id}">{$incomingCall.customer.phone}</a>
+      <a href="https://myshopifystore.shopify.com/admin/orders/{$incomingCall.order.id}">#{$incomingCall.order.name}</a>
     </nav>
   </div>
 {/if}

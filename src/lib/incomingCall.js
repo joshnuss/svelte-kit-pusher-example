@@ -5,9 +5,10 @@ export default readable(null, set => {
 
   const pusher = new Pusher(import.meta.env.VITE_PUSHER_KEY, {
     cluster: import.meta.env.VITE_PUSHER_CLUSTER,
+    authEndpoint: "/pusher/auth"
   })
 
-  const channel = pusher.subscribe('incoming-calls')
+  const channel = pusher.subscribe('private-incoming-calls')
 
   channel.bind('start', (data) => {
     console.log('start', data)
@@ -19,5 +20,5 @@ export default readable(null, set => {
     set(null)
   })
 
-  return () => pusher.unsubscribe(channel)
+  return () => pusher.unsubscribe('private-incoming-calls')
 })
