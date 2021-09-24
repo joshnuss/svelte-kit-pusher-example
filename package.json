@@ -7,10 +7,11 @@
     "preview": "svelte-kit preview"
   },
   "devDependencies": {
-    "@sveltejs/kit": "next",
     "@sveltejs/adapter-vercel": "next",
+    "@sveltejs/kit": "next",
     "pusher": "^5.0.0",
-    "svelte": "^3.42.6"
+    "svelte": "^3.42.6",
+    "vercel": "^23.1.2"
   },
   "type": "module"
 }
