@@ -5,8 +5,8 @@ export async function post({query}) {
   const data = {
     customer: {
       id: '1234566',
-      name: "Josh Nussbaum",
-      email: "joshnuss@gmail.com",
+      name: "John Smith",
+      email: "jsmith@acme.co",
       phone: '+15145551212'
     },
     order: {
