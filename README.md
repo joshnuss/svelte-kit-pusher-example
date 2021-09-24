@@ -8,3 +8,5 @@
 - `VITE_PUSHER_KEY`
 - `VITE_PUSHER_CLUSTER`
 - `PUSHER_SECRET`
+
+You can find them in Pusher's dashboard under Channels -> [app name] -> App Keys
