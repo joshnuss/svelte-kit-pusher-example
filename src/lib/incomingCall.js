@@ -10,13 +10,11 @@ export default readable(null, set => {
 
   const channel = pusher.subscribe('private-incoming-calls')
 
-  channel.bind('start', (data) => {
-    console.log('start', data)
+  channel.bind('start', data => {
     set(data)
   })
 
-  channel.bind('end', (data) => {
-    console.log('end', data)
+  channel.bind('end', data => {
     set(null)
   })
 
