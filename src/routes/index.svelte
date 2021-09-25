@@ -19,7 +19,7 @@
     await send('end')
   }
 </script>
-<h1>Pusher test</h1>
+<h1>Pusher + SvelteKit example</h1>
 
 <pre>
   {JSON.stringify({call: $incomingCall}, null, 2)}
