@@ -5,6 +5,10 @@ export async function post({body}) {
   const channel = body.get('channel_name')
   const auth = pusher.authenticate(socketId, channel)
 
+  // TODO: do real authentication here
+  // to deny access:
+  // return { status: 403 }
+  
   console.log({auth})
 
   return {
