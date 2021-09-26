@@ -1,5 +1,6 @@
 import { pusher } from '$lib/pusher.js'
 
+// an endpoint to create fake events (for testing)
 export async function post({query}) {
   const type = query.get('type')
   const data = {
@@ -14,6 +15,9 @@ export async function post({query}) {
       name: '1234'
     }
   }
+
+  // fire the event
+  // note: channel names prefixed with "private-" require authentication to access
   await pusher.trigger('private-incoming-calls', type, data)
 
   return {

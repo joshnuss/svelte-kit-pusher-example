@@ -1,20 +1,25 @@
 <script>
   import {fly, fade} from 'svelte/transition'
   import {elasticOut} from 'svelte/easing'
+
+  // this is a store that wraps pusher events
   import incomingCall from '$lib/incomingCall.js'
 
   async function send(type) {
-    // send to pusher
+    // send to pusher via endpoint
+    // SvelteKit turns the endpoint into a cloud function in production
     const response = await fetch(`/test?type=${type}`, { method: 'POST' })
     const json = await response.json()
 
     console.log(json)
   }
 
+  // send fake "start" event
   async function start() {
     await send('start')
   }
 
+  // send fake "end" event
   async function end() {
     await send('end')
   }
